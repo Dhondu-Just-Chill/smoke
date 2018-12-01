@@ -1,5 +1,5 @@
 <?php
-	include("db-config.php");
+	include("config/db-config.php");
 
 	$username = $_POST["username"];
 	$password = $_POST["password"];
@@ -20,7 +20,6 @@
 		if (mysqli_num_rows($result) == 1) {
 			session_start();
 			$_SESSION['login_user'] = $username;
-			//$_SESSION['password'] = ;
 			header("Location: index.php");
 		}
 		else {
