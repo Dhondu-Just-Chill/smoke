@@ -4,9 +4,7 @@
 	$username = $_POST["username"];
 	$password = $_POST["password"];
 	
-	$DB_Database = "db_1";
-	
-	$DB_Connection = mysqli_connect($DB_ServerName, $DB_UserName, $DB_Password, $DB_Database);
+	$DB_Connection = connectDB();
 	
 	if (!$DB_Connection) {
 		die("Connection failed: " . mysqli_connect_error());
